@@ -1,0 +1,8 @@
+.container_main{
+    width: 50%;
+    margin: 30px auto;
+    border: 1px solid;
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 25px;
+}

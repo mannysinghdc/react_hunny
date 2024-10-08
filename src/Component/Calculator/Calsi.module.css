@@ -1,0 +1,23 @@
+.mainContainer{
+    border: 1px solid;
+    width: 400px;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+    background:#aed1d2
+}
+input{
+    width: 100%;
+    font-size: 30px;
+}
+
+.buttonBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.btn{
+    width: 60px;
+    margin: 10px;
+    border:none
+}

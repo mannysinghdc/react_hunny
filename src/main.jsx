@@ -40,6 +40,8 @@ import SignUp from './Component/LoginFuc/SignUp.jsx'
 import Shopping from './Component/Shopping/Shopping.jsx'
 import HomeShop from './Component/Shopping/Pages/HomeShop.jsx'
 import Product from './Component/Shopping/Pages/Product.jsx'
+import ShopCreate from './Component/Shopping/Pages/ShopCreate.jsx'
+import EditProduct from './Component/Shopping/Pages/EditProduct.jsx'
 
 
 const router = createBrowserRouter([
@@ -133,11 +135,19 @@ const router = createBrowserRouter([
         children: [
           {
             path: "home",
-            element: <HomeShop/>
+            element: <HomeShop />
           },
           {
             path: "product",
-            element: <Product/>
+            element: <Product />
+          },
+          {
+            path: "product/create",
+            element: <ShopCreate />
+          },
+          {
+            path: "product/edit/:id",
+            element: <EditProduct/>
           }
         ]
       },

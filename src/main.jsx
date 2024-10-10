@@ -39,6 +39,7 @@ import Login from './Component/LoginFuc/Login.jsx'
 import SignUp from './Component/LoginFuc/SignUp.jsx'
 import Shopping from './Component/Shopping/Shopping.jsx'
 import HomeShop from './Component/Shopping/Pages/HomeShop.jsx'
+import Product from './Component/Shopping/Pages/Product.jsx'
 
 
 const router = createBrowserRouter([
@@ -136,7 +137,7 @@ const router = createBrowserRouter([
           },
           {
             path: "product",
-            element: <h1>product</h1>
+            element: <Product/>
           }
         ]
       },

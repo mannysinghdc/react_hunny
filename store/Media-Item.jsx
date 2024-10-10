@@ -32,13 +32,8 @@ const MediaContextProvider = ({ children }) => {
 
     }, [post])
 
-
-    useEffect(() => {
-        const controller = new AbortController();
-        const signal = controller.signal
-        //Fetch all post from API
-
-        setFetching(true)
+const fetchpost=({signal})=>{
+   setFetching(true)
         axios.get('https://dummyjson.com/posts', { signal })
             .then((response) => {
                 setPost(response.data.posts);
@@ -48,6 +43,15 @@ const MediaContextProvider = ({ children }) => {
                 // handle error
                 console.log(error);
             })
+}
+
+
+    useEffect(() => {
+        const controller = new AbortController();
+        const signal = controller.signal
+        //Fetch all post from API
+        fetchpost(signal)
+    
         return () => {
             // cancel the request before component unmounts
             controller.abort();

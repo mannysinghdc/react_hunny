@@ -3,15 +3,14 @@ import { NavLink, useLocation, Link } from "react-router-dom"
 import DrawerCmpt from "./DrawerCmpt"
 import { TextCounterContext } from "../../store/Text-Coounter-Item"
 import { ColorContext } from "../../store/Color-Item"
-import Logout from "./LoginFuc/Logout"
 
 
 const Navbar = () => {
     const location = useLocation()
     const { mode, setMode } = useContext(TextCounterContext)  // light and dark mode functionility
-    const { setFlag ,setShowCmpt} = useContext(ColorContext)
+    const { setShowCmpt} = useContext(ColorContext) //This state is used for children app [foodweb,media]
 
-    const login = localStorage.getItem("login")
+    const login = localStorage.getItem("login")  // this is used to diaplay navbar after login
 
 
     //Dark and light mode
@@ -68,7 +67,7 @@ const Navbar = () => {
                                         <NavLink className={`nav-link ${location.pathname === "/counter" ? "active" : null}`} aria-current="page" to="counter" onClick={mode == "textBg" ? () => setMode("dark") : ""}>Counter</NavLink>
                                     </li>
                                     <li className="nav-item" onClick={() => setShowCmpt("foodweb")}>
-                                        <NavLink className={`nav-link ${location.pathname === "/foodweb" ? "active" : null}`} aria-current="page" to="/foodweb" onClick={mode == "textBg" ? () => setMode("dark") : ""}>FoodWeb</NavLink>
+                                        <NavLink className={`nav-link ${location.pathname === "/foodweb/home" ? "active" : null}`} aria-current="page" to="foodweb/home" onClick={mode == "textBg" ? () => setMode("dark") : ""}>FoodWeb</NavLink>
                                     </li>
                                     <li className="nav-item" onClick={() => setShowCmpt("social")}>
                                         <NavLink className={`nav-link ${location.pathname === "/media" ? "active" : null}`} aria-current="page" to="media" onClick={mode == "textBg" ? () => setMode("dark") : ""}>Social</NavLink>

@@ -37,6 +37,8 @@ import SearchFood from './Component/FoowWeb/SearchFood.jsx'
 import ProtectRoute from './Component/ProtectRoute.jsx'
 import Login from './Component/LoginFuc/Login.jsx'
 import SignUp from './Component/LoginFuc/SignUp.jsx'
+import Shopping from './Component/Shopping/Shopping.jsx'
+import HomeShop from './Component/Shopping/Pages/HomeShop.jsx'
 
 
 const router = createBrowserRouter([
@@ -95,15 +97,15 @@ const router = createBrowserRouter([
         element: <ProtectRoute><Counter /></ProtectRoute>
       },
       {
-        path: "curd",
+        path: "curd",                                                                //Curd
         element: <ProtectRoute><Curd /></ProtectRoute>
       },
       {
-        path: "todo",
+        path: "todo",                                                                //Todo
         element: <ProtectRoute><Todo /></ProtectRoute>
       },
       {
-        path: "media",
+        path: "media",                                                                // Media
         element: <ProtectRoute>{""}</ProtectRoute>,
         children: [
           {
@@ -121,8 +123,22 @@ const router = createBrowserRouter([
         ]
       },
       {
-        path: "searhimage",
+        path: "searhimage",                                               //Searhimage
         element: <ProtectRoute><SearchImage /></ProtectRoute>
+      },
+      {                                                                   //Shopping
+        path: "shopping",
+        element: <ProtectRoute>{""}</ProtectRoute>,
+        children: [
+          {
+            path: "home",
+            element: <HomeShop/>
+          },
+          {
+            path: "product",
+            element: <h1>product</h1>
+          }
+        ]
       },
       {
         path: "mealsearch",

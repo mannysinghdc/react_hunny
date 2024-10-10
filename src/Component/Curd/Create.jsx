@@ -15,7 +15,7 @@ const Create = () => {
     const editHandlerId = () => {
         const dt = data.filter(e => e.id === id)
         // console.log(Math.random)
-        if (id !== "") {
+        if (id !== undefined) {
             setDetail({ name: dt[0].name, email: dt[0].email, age: dt[0].age, date: dt[0].date })
         }
     }
@@ -56,7 +56,10 @@ const Create = () => {
 
     console.log(id, flag)
     useEffect(() => {
+       if(flag && id !== undefined){
         editHandlerId()
+       }
+        
         
     }, [id, flag])
     return (

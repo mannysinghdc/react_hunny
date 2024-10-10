@@ -58,7 +58,7 @@ const Clock = () => {
     document.title = "Digital Clock App"
     return (
         <>
-            <div className="container text-center my-4" style={styleCss}>
+            <div className="container text-center my-4" style={styleCss}  >
                 <h2 className="text-info my-4">Digital Clock</h2>
                 <h3>{time.toLocaleTimeString()}</h3>
 

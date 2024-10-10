@@ -6,7 +6,7 @@ export const CurdContext = createContext({
 
 const CurdContextProvider = ({ children }) => {
     const [data, setData] = useState([])
-    const [id, setId] = useState("")
+    const [id, setId] = useState(undefined)
     const [flag, setFlag] = useState(false)
 
     //Select id after clicked on edit button on read cmpt

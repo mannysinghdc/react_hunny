@@ -16,18 +16,18 @@ const DrawerCmpt = () => {
   const [open, setOpen] = useState(false)
   const navigate = useNavigate()
   const location = useLocation()
-  const { mode, setMode } = useContext(ColorContext)
+  const { mode, setMode,setShowCmpt } = useContext(ColorContext)
   const { removeBgColor } = useContext(TextCounterContext)
+
 
   const listItem = [
     { route: 'Color', icon: <i className="fa-solid fa-house"></i> },
     { route: 'Todo', icon: <i className="fa-solid fa-table-list"></i> },
-    { route: 'Food', icon: <i className="fa-solid fa-utensils"></i> },
     { route: 'Rating', icon: <i className="fa-solid fa-star"></i> },
     { route: 'Curd', icon: <i className="fa-solid fa-book"></i> },
     { route: 'TextCounter', icon: <i className="fa-solid fa-text-height"></i> },
-    { route: 'News', icon: <i className="fa-solid fa-newspaper"></i> }
-
+    { route: 'News', icon: <i className="fa-solid fa-newspaper"></i> },
+    { route: 'Shopping', icon: <i className="fa-solid fa-cart-shopping"></i>},
   ]
 
   const toggleDrawer = (newOpen) => () => {
@@ -39,13 +39,15 @@ const DrawerCmpt = () => {
     if (text === "TextCounter" && mode == "dark" && location.pathname === "/textcounter") {
       setMode("textBg")
     }
+    if(text === "Shopping" ){
+      setShowCmpt("shopping")
+    }
     navigate(text.toLowerCase())
-
   }
 
-  // useEffect(() => {
-  //   document.querySelector("body").className = mode
-  // }, [mode])
+  useEffect(() => {
+    document.querySelector("body").className = mode //dark and light color mode
+  }, [mode])
 
   const DrawerList = (
     <Box sx={{ width: 155 }} role="presentation" onClick={toggleDrawer(false)}>
@@ -53,7 +55,7 @@ const DrawerCmpt = () => {
         {listItem.map((text, i) => (
           <ListItem key={i} disablePadding>
             <ListItemButton>
-              <ListItemIcon>
+              <ListItemIcon sx={{minWidth:"35px"}}>
                 {text.icon}
               </ListItemIcon>
               <ListItemText primary={text.route} onClick={() => navigateLink(text.route)} />

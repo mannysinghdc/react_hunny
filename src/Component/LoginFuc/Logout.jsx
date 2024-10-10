@@ -1,15 +1,13 @@
-
 import { Link } from '@mui/material';
-import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem } from 'mdb-react-ui-kit';
-import { useContext } from 'react';
+import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem } from 'mdb-react-ui-kit'
 import { useNavigate } from 'react-router-dom'
 
 const Logout = () => {
     const user = JSON.parse(localStorage.getItem("user"))
     const navigate = useNavigate()
-
+console.log(localStorage.getItem("login"))
     const logoutHandler = () => {
-        localStorage.removeItem("loggin");
+        localStorage.removeItem("login");
         navigate("/login")
     }
     return (

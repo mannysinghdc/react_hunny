@@ -17,7 +17,7 @@ const Calulator = () => {
     const clickHandler = (val) => {
         if (val === "C") {
             setDisplay("")
-        } else if (val === "=" && display !== "") {
+        } else if (val === "=" && display !== "" && display !=="=") {
             const result = eval(display)
             setDisplay(result)
         } else {

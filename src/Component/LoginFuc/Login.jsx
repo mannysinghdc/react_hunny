@@ -1,6 +1,5 @@
-
 import { MDBInput, MDBCol, MDBRow, MDBCheckbox, MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
-import { useContext, useState } from 'react';
+import {  useState } from 'react';
 import { useNavigate, Link } from "react-router-dom"
 
 const Login = () => {
@@ -11,6 +10,7 @@ const Login = () => {
         setData({ ...data, [e.target.name]: e.target.value })
     }
 
+     //submit 
     const submitHandler = (e) => {
         e.preventDefault()
         const loggedUser = JSON.parse(localStorage.getItem("user"))

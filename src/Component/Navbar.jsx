@@ -8,9 +8,15 @@ import { ColorContext } from "../../store/Color-Item"
 const Navbar = () => {
     const location = useLocation()
     const { mode, setMode } = useContext(TextCounterContext)  // light and dark mode functionility
-    const { setShowCmpt} = useContext(ColorContext) //This state is used for children app [foodweb,media]
+    const { setShowCmpt } = useContext(ColorContext) //This state is used for children app [foodweb,media]
 
     const login = localStorage.getItem("login")  // this is used to diaplay navbar after login
+    const user = JSON.parse(localStorage.getItem("user"))
+
+    const logoutHandler = () => {
+        localStorage.removeItem("login");
+        navigate("/login")
+    }
 
 
     //Dark and light mode
@@ -79,22 +85,22 @@ const Navbar = () => {
                                         <NavLink className={`nav-link ${location.pathname === "/weather" ? "active" : null}`} aria-current="page" to="weather" onClick={mode == "textBg" ? () => setMode("dark") : ""}>Weather</NavLink>
                                     </li>
                                 </ul>
+                            
                                 <ul className="navbar-nav">
+                                
                                     <li className="nav-item dropdown">
                                         <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             Action
                                         </a>
                                         <ul className="dropdown-menu">
                                             <li><a className="dropdown-item" href="#">Profile</a></li>
-                                            <li><a className="dropdown-item" href="#">Another action</a></li>
+                                            <li><a className="dropdown-item" href="#">{user.name}</a></li>
                                             <li><hr className="dropdown-divider" /></li>
-                                            <li><Link className="dropdown-item" to="/login">Logout</Link></li>
+                                            <li><Link className="dropdown-item" to="/login" onClick={logoutHandler}><i className="fas fa-user-astronaut pr-3 me-2" />Logout</Link></li>
                                         </ul>
                                     </li>
                                 </ul>
                             </>
-
-
                                 :
                                 <div style={{ marginRight: "5px", }}>
                                     <Link className="btn btn-primary btn-sm mx-1" to="/login" role="button">Login</Link>
@@ -106,13 +112,10 @@ const Navbar = () => {
                             {
                                 <i className={`fa-solid fa-${mode == 'light' ? 'sun' : 'moon'}`} style={{ color: "gray", cursor: 'pointer' }}></i>
                             }
-
                         </div>
-
                     </div>
                 </div>
             </nav>
-
         </>
     )
 }

@@ -6,14 +6,17 @@ export default function SignUp() {
     const [data, setData] = useState({ name: "", lastName: "", email: "", password: "" })
     const navigate = useNavigate()
 
+    //Change 
     const changeHandler = (e) => {
-        setData({ ...data, [e.target.name]: e.target.value })
+        const name= e.target.name
+        setData({ ...data, [name]: e.target.value })
     }
 
+    //submit 
     const submitHanlder = (e) => {
         e.preventDefault()
         if (!data.name || !data.lastName || !data.email || !data.password) {
-            alert("Please enter all input")
+            alert("Please enter all value!")
         } else {
             localStorage.setItem("user", JSON.stringify(data))
             navigate("/login")
@@ -24,7 +27,7 @@ export default function SignUp() {
 
     return (
         <div className="container">
-            <div className="col-md-4 mx-auto mt-4">
+            <div className="col-ms-4 mx-auto mt-4">
                 <form onSubmit={submitHanlder}>
                     <h2>Registration Form</h2>
                     <MDBRow className='mb-4'>

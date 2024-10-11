@@ -60,11 +60,11 @@ const router = createBrowserRouter([
         index: true
       },
       {
-        path: "/login",
+        path: "/login",                                                           //Login
         element: <Login />
       },
       {
-        path: "/signUp",
+        path: "/signUp",                                                          //SignUp
         element: <SignUp />
       },
       {
@@ -82,11 +82,11 @@ const router = createBrowserRouter([
         ]
       },
       {
-        path: "clock",
+        path: "clock",                                                             //Clock
         element: <ProtectRoute><Clock /></ProtectRoute>
       },
       {
-        path: "color",
+        path: "color",                                                             //Color
         element: <ProtectRoute><Color /></ProtectRoute>,
         children: [
           {
@@ -95,7 +95,7 @@ const router = createBrowserRouter([
           }
         ]
       },
-      {
+      {                                                                             //Counter
         path: "counter",
         element: <ProtectRoute><Counter /></ProtectRoute>
       },

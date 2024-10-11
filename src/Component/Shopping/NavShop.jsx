@@ -5,7 +5,7 @@ const NavShop = () => {
         <>
             <nav className="navbar navbar-expand-lg bg-white border-bottom shadow p-3 mb-5 bg-body-tertiary rounded">
                 <div className="container">
-                    <Link className="navbar-brand" href="#" style={{ fontFamily: "fantasy" }}>
+                    <Link className="navbar-brand" to="/shopping/home" style={{ fontFamily: "fantasy" }}>
                         <img className="me-2 rounded" src="/shopping/shop.png" alt="image" height={30} />
                         Best Store
                     </Link>

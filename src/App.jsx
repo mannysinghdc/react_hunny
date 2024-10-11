@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import CounterStore from "../store/index"
 import { useContext ,useEffect} from "react"
 import { ColorContext } from "../store/Color-Item"
-import FoodWeb from "./Component/FoowWeb/FoodWeb"
+import FoodWeb from "./Component/FoodWeb/FoodWeb"
 import Social from "./Component/Social/Social"
 import Shopping from "./Component/Shopping/Shopping"
 

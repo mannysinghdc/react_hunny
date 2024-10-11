@@ -35,7 +35,7 @@ const Dial = () => {
         <Box sx={{ transform: 'translateZ(0px)', flexGrow: 1 }}>
             <SpeedDial
                 ariaLabel="SpeedDial"
-                sx={{ position: 'absolute', bottom: 0, right: 10 }}
+                sx={{ position: 'absolute', bottom: 0, right: 10 ,height: "35px", width:"30px" ,marginInline:"20px"}}
                 icon={<SpeedDialIcon />}
             >
                 {actions.map((action) => (
